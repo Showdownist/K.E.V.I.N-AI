@@ -50,7 +50,7 @@ recognition.onresult = (event) => {
 // Handle errors gracefully
 recognition.onerror = (event) => {
     console.error("Recognition error:", event.error);
-    speak("Sorry, there was an error. Let's try again.", startListening);
+    speak("", startListening);
 };
 
 // Restart listening when recognition ends unexpectedly
