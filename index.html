@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K.E.V.I.N</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding: 10px;
+        }
+
+        .container {
+            background-color: black;
+            width: 375px;
+            border: 1px solid rgb(15, 241, 15);
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .header {
+            padding: 15px;
+            font-weight: bold;
+            font-size: 1.5em;
+            background-color: black;
+            border-bottom: 1px solid rgb(15, 241, 15);
+            color: white;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: auto;
+        }
+
+        .button {
+            display: block;
+            width: 90%;
+            padding: 15px;
+            margin: 10px auto;
+            border-radius: 5px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .button.speak {
+            background-color: #00a9e0;
+        }
+
+        .button.listen {
+            background-color: rgb(15, 241, 15);
+            color: #000;
+        }
+
+        .button:hover {
+            opacity: 0.9;
+        }
+
+        .button.instructions {
+            background-color: red;
+            color: white;
+            text-decoration: none;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">K.E.V.I.N Emotional Support AI</div>
+        <div class="image-container">
+            <img src="Brain.png" alt="K.E.V.I.N">
+        </div>
+        <button class="button speak" onclick="loadScript('speak.js')">Let K.E.V.I.N Speak</button>
+        <button class="button listen" onclick="loadScript('listen.js')">Let K.E.V.I.N Listen</button>
+        <button class="button instructions" onclick="window.open('HOW TO USE.pdf')">Instructions</button>
+    </div>
+
+    <script>
+        function loadScript(scriptName) {
+            // Check if the script is already loaded
+            const existingScript = document.querySelector(`script[src="${scriptName}"]`);
+            if (existingScript) {
+                console.log(`${scriptName} is already loaded.`);
+                return;
+            }
+
+            // Create a new script element
+            const script = document.createElement('script');
+            script.src = scriptName;
+            script.type = 'text/javascript';
+
+            // Optional: Handle script load events
+            script.onload = () => console.log(`${scriptName} has been loaded successfully.`);
+            script.onerror = () => console.error(`Failed to load ${scriptName}.`);
+
+            // Append the script to the document
+            document.body.appendChild(script);
+        }
+    </script>
+</body>
+</html>
