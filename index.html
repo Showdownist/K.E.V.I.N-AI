@@ -19,6 +19,7 @@
             align-items: center;
             height: 100vh;
             padding: 10px;
+            flex-direction: column;
         }
 
         .container {
@@ -29,6 +30,7 @@
             box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
             overflow: hidden;
             text-align: center;
+            margin-bottom: 20px;
         }
 
         .header {
@@ -83,6 +85,17 @@
             text-decoration: none;
             color: white;
         }
+
+        .note {
+            font-size: 14px;
+            color: white;
+            background-color: #333;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 5px;
+            border: 1px solid #fff;
+        }
+
     </style>
 </head>
 <body>
@@ -94,6 +107,10 @@
         <button class="button speak" onclick="loadScript('speak.js')">Let K.E.V.I.N Speak</button>
         <button class="button listen" onclick="loadScript('listen.js')">Let K.E.V.I.N Listen</button>
         <button class="button instructions" onclick="window.open('HOW TO USE.pdf')">Instructions</button>
+    </div>
+
+    <div class="note">
+        <strong>Note:</strong> Only one model can run at the time of loading the page. To switch models, please say "exit" and refresh the page, then choose the other model.
     </div>
 
     <script>
