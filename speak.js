@@ -155,7 +155,6 @@ function listen() {
 
     recognition.onerror = (event) => {
         console.error("Error occurred in recognition:", event.error);
-        speak("Sorry, there was an error. Please try again.", listen);
     };
 
     recognition.onend = () => {

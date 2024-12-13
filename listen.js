@@ -63,6 +63,6 @@ recognition.onend = () => {
 };
 
 // Initial greeting and activation
-speak("Kevin Emotional Support Artificial Intelligence for speaking activated. Welcome, Boss!", () => {
+speak("Kevin Emotional Support Artificial Intelligence for listening activated. Welcome, Boss!", () => {
     speak("Do you want me to listen to your problems?", startListening);
 });
