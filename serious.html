@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>K.E.V.I.N</title>
+    <title>K.E.V.I.N Real Human Support</title>
     <style>
         * {
             box-sizing: border-box;
@@ -120,22 +120,48 @@
             }
         }
 
+        .input-container input {
+            padding: 10px;
+            width: 80%;
+            margin-right: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .input-container button {
+            padding: 10px;
+            background-color: rgb(28, 226, 28);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .input-container button:hover {
+            opacity: 0.9;
+        }
+
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="header">K.E.V.I.N Emotional Support AI</div>
+        <div class="header">K.E.V.I.N Real Human Support</div>
         <div class="image-container">
-            <img src="Brain.png" alt="K.E.V.I.N">
+            <img src="godmode.png" alt="god mode">
         </div>
-        <button class="button speak" onclick="loadScript('speak.js')">Let K.E.V.I.N Speak</button>
-        <button class="button listen" onclick="loadScript('listen.js')">Let K.E.V.I.N Listen</button>
-        <button class="button instructions" onclick="window.open('HOW TO USE.pdf')">Instructions</button>
-        <button class="button instructions" style="background-color: rgb(238, 238, 7); color: black;"><a style="color: black;" href="serious.html">Ask a Real Human</a></button>
+        <!-- YouTube Search Section -->
+        <div class="input-container">
+            <input type="text" id="searchQuery" placeholder="Enter your problem in short..." />
+            <br>
+            <button onclick="searchYouTube()">Press to ask an expert online</button>
+            <br>
+            <button style="margin-bottom: 10px;"><a href="index.html">Go back to K.E.V.I.N</a></button>
+        </div>
     </div>
 
     <div class="note">
-        <strong>Note:</strong> Only one model can run at the time of loading the page. To switch models, please say "exit" and refresh the page, then choose the other model. Also zoom out on desktop if all options are not visible. Refresh the page if it's not working correctly.
+        <strong>Note:</strong> You will be redirected to real experts who can solve your problems. K.E.V.I.N AI offers motivation and a supportive companion to help clear your mind, but complex issues are best addressed by humans.Zoom out on desktop if buttons are not visible
     </div>
 
     <script>
@@ -158,6 +184,16 @@
 
             // Append the script to the document
             document.body.appendChild(script);
+        }
+
+        function searchYouTube() {
+            const query = document.getElementById('searchQuery').value;
+            if (query.trim() !== '') {
+                const searchUrl = `https://www.youtube.com/results?search_query=${encodeURIComponent(query)}`;
+                window.open(searchUrl, '_blank');
+            } else {
+                alert('Please enter a search query.');
+            }
         }
     </script>
 </body>
